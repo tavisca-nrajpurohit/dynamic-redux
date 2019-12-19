@@ -1,6 +1,6 @@
 {
     "name": "@rakoon-badshah/dynamic-redux",
-    "version": "3.0.0",
+    "version": "3.0.3",
     "description": "Removes all spaces from a string",
     "license": "MIT",
     "repository": "tavisca-nrajpurohit/dynamic-redux",
@@ -19,7 +19,7 @@
         "rakoon",
         "badshah"
     ],
-    "devDependencies": {
+    "dependencies": {
         "dot-prop-immutable": "^1.5.0",
         "redux": "^4.0.4",
         "redux-devtools-extension": "^2.13.8",
