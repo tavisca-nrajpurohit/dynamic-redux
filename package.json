@@ -5,14 +5,24 @@
     "license": "MIT",
     "repository": "tavisca-nrajpurohit/dynamic-redux",
     "main": "index.js",
+    "author": "Neelesh Singh Rajpurohit",
+    "engines": {
+        "node": ">=10.0.0",
+        "npm": ">=6.0.0"
+      },
     "keywords": [
         "redux",
         "dynamic",
         "reducer",
         "addreducer",
         "typecript",
-        "neelesh",
-        "singh",
-        "rajpurohit"
-    ]
+        "rakoon",
+        "badshah"
+    ],
+    "devDependencies": {
+        "dot-prop-immutable": "^1.5.0",
+        "redux": "^4.0.4",
+        "redux-devtools-extension": "^2.13.8",
+        "redux-dynamic-reducer": "^2.0.2"
+    }
 }
