@@ -1,0 +1,18 @@
+{
+    "name": "@rakoon-badshah/dynamic-redux",
+    "version": "1.0.0",
+    "description": "Removes all spaces from a string",
+    "license": "MIT",
+    "repository": "tavisca-nrajpurohit/dynamic-redux",
+    "main": "index.js",
+    "keywords": [
+        "redux",
+        "dynamic",
+        "reducer",
+        "addreducer",
+        "typecript",
+        "neelesh",
+        "singh",
+        "rajpurohit"
+    ]
+}
