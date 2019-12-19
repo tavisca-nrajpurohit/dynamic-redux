@@ -15,14 +15,13 @@
         "dynamic",
         "reducer",
         "addreducer",
-        "typecript",
-        "rakoon",
-        "badshah"
+        "dynamic reducer",
+        "dynamic redux state",
+        "hierarchical redux state"
     ],
     "dependencies": {
         "dot-prop-immutable": "^1.5.0",
         "redux": "^4.0.4",
-        "redux-devtools-extension": "^2.13.8",
         "redux-dynamic-reducer": "^2.0.2"
     }
 }

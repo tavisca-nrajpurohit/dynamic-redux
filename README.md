@@ -8,10 +8,9 @@
 This is a library to create [Redux](http://redux.js.org/) stores that can have additional reducers dynamically attached at runtime.
 
 It has the following functions from the following respective packages:
-createStore,applyMiddleware : [redux-dynamic-reducers Package](https://www.npmjs.com/package/redux-dynamic-reducer),
-combineReducers: [redux](https://www.npmjs.com/package/redux),
-get,set,delete : [dot-prop-immutable](https://www.npmjs.com/package/dot-prop-immutable),
-composeWithDevTools: [redux-devtools-extension](https://www.npmjs.com/package/redux-devtools-extension)
+*createStore,applyMiddleware,compose : [redux-dynamic-reducers Package](https://www.npmjs.com/package/redux-dynamic-reducer),
+*combineReducers: [redux](https://www.npmjs.com/package/redux),
+*get,set,delete : [dot-prop-immutable](https://www.npmjs.com/package/dot-prop-immutable).
 
 ## Install
 
@@ -93,15 +92,7 @@ store.attachReducers({ 'some/path/to': { dynamicReducer } } } })
 ```
 
 
-### 3. Create Store with Redux Dev Tools Support
-use like that:
-```javascript
-import {createStore,composeWithDevTools} from '@rakoon-badshah/dynamic-redux'
-
-export const store = createStore(reducer,composeWithDevTools());
-```
-
-### 4. Use the Get-Set Helper functions to easily access and update the state in reducers
+### 3. Use the Get-Set Helper functions to easily access and update the state in reducers
 This library implements 3 helper functions:
 
 ```
