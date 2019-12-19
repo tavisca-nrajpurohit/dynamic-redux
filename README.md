@@ -8,9 +8,9 @@
 This is a library to create [Redux](http://redux.js.org/) stores that can have additional reducers dynamically attached at runtime.
 
 It has the following functions from the following respective packages:
-*createStore,applyMiddleware,compose : [redux-dynamic-reducers Package](https://www.npmjs.com/package/redux-dynamic-reducer),
-*combineReducers: [redux](https://www.npmjs.com/package/redux),
-*get,set,delete : [dot-prop-immutable](https://www.npmjs.com/package/dot-prop-immutable).
+* createStore,applyMiddleware,compose : [redux-dynamic-reducers Package](https://www.npmjs.com/package/redux-dynamic-reducer),
+* combineReducers: [redux](https://www.npmjs.com/package/redux),
+* get,set,delete : [dot-prop-immutable](https://www.npmjs.com/package/dot-prop-immutable).
 
 ## Install
 
