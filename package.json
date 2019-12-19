@@ -1,6 +1,6 @@
 {
     "name": "@rakoon-badshah/dynamic-redux",
-    "version": "3.1.0",
+    "version": "3.2.0",
     "description": "Removes all spaces from a string",
     "license": "MIT",
     "repository": "tavisca-nrajpurohit/dynamic-redux",
@@ -25,4 +25,3 @@
         "redux-dynamic-reducer": "^2.0.2"
     }
 }
-
