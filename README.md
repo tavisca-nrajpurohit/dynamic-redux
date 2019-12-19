@@ -8,9 +8,9 @@
 This is a library to create [Redux](http://redux.js.org/) stores that can have additional reducers dynamically attached at runtime.
 
 It has the following functions from the following respective packages:
-createStore : [redux-dynamic-reducers Package](https://www.npmjs.com/package/redux-dynamic-reducer),
+createStore,applyMiddleware : [redux-dynamic-reducers Package](https://www.npmjs.com/package/redux-dynamic-reducer),
 combineReducers: [redux](https://www.npmjs.com/package/redux),
-get,set : [dot-prop-immutable](https://www.npmjs.com/package/dot-prop-immutable),
+get,set,delete : [dot-prop-immutable](https://www.npmjs.com/package/dot-prop-immutable),
 composeWithDevTools: [redux-devtools-extension](https://www.npmjs.com/package/redux-devtools-extension)
 
 ## Install
@@ -92,6 +92,118 @@ store.attachReducers({ 'some.path.to': { dynamicReducer } } } })
 store.attachReducers({ 'some/path/to': { dynamicReducer } } } })
 ```
 
+
+### 3. Create Store with Redux Dev Tools Support
+use like that:
+```javascript
+import {createStore,composeWithDevTools} from '@rakoon-badshah/dynamic-redux'
+
+export const store = createStore(reducer,composeWithDevTools());
+```
+
+### 4. Use the Get-Set Helper functions to easily access and update the state in reducers
+This library implements 3 helper functions:
+
+```
+get(object, path) --> value
+set(object, path, value) --> object
+delete(object, path) --> object
+```
+
+#### usage 
+```javascript
+var dotProp = require('dot-prop-immutable');
+```
+
+#### get
+
+Access a nested property by a dot path
+
+```javascript
+// Getter
+dotProp.get({foo: {bar: 'unicorn'}}, 'foo.bar')
+//=> 'unicorn'
+
+dotProp.get({foo: {bar: 'a'}}, 'foo.notDefined.deep')
+//=> undefined
+
+dotProp.get({foo: {bar: 'a'}}, 'foo.notDefined.deep', 'default value')
+//=> default value
+
+dotProp.get({foo: {'dot.dot': 'unicorn'}}, 'foo.dot\\.dot')
+//=> 'unicorn'
+```
+
+
+or use a property array as a path.
+
+```javascript
+// Use an array as get path
+dotProp.get({foo: {'dot.dot': 'unicorn'}}, ['foo', 'dot.dot'])
+//=> 'unicorn'
+```
+
+#### set
+
+Modify a nested property by a dot path
+
+```javascript
+// Setter
+var obj = {foo: {bar: 'a'}};
+
+var obj1 = dotProp.set(obj, 'foo.bar', 'b');
+//obj1 => {foo: {bar: 'b'}}
+
+var obj2 = dotProp.set(obj1 , 'foo.baz', 'x');
+//obj2 => {foo: {bar: 'b', baz: 'x'}}
+```
+
+where `obj`, `obj1`, `obj2`, `obj3` all are different objects.
+
+
+
+Use a function to modify the selected property, where first argument is the old value.
+
+```javascript
+// Setter where value is a function (get and set current value)
+dotProp.set({foo: {bar: 'a'}}, 'foo.bar', v => v + 'bc')
+//=> {foo: {bar: 'abc'}}
+```
+
+
+Modify a nested array
+
+```javascript
+var obj = {foo: [{ bar: 'gold-unicorn'}, 'white-unicorn', 'silver-unicorn']};
+
+// Index into array
+dotProp.set(obj, 'foo.1', 'platin-unicorn')
+//=> {foo: [{bar: 'gold-unicorn'}, 'platin-unicorn', 'silver-unicorn']}
+
+dotProp.set(obj, 'foo.0.bar', 'platin-unicorn')
+//=> {foo: [{bar: 'platin-unicorn'}, 'white-unicorn', 'silver-unicorn']}
+
+// Index into array with $end
+dotProp.set(obj, 'foo.$end', 'platin-unicorn')
+//=> {foo: [{ bar: 'gold-unicorn'}, 'white-unicorn', 'platin-unicorn']}
+
+```
+
+
+#### delete
+
+Delete a nested property/array by a dot path
+
+```javascript
+var obj = {foo: [{ bar: 'gold-unicorn'}, 'white-unicorn', 'silver-unicorn']};
+
+// delete
+dotProp.delete(obj, 'foo.$end');
+//=> {foo: [{ bar: 'gold-unicorn'}, 'white-unicorn']}
+
+dotProp.delete(obj, 'foo.0.bar');
+//=> {foo: [{}, 'white-unicorn', 'silver-unicorn']}
+```
 
 ## Limitations
 

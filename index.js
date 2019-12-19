@@ -1,4 +1,4 @@
-export {combineReducers} from 'redux'
+export {combineReducers,applyMiddleware} from 'redux'
 export {createStore} from 'redux-dynamic-reducer'
-export { get,set} from 'dot-prop-immutable'
+export { get,set,delete} from 'dot-prop-immutable'
 export {composeWithDevTools} from 'redux-devtools-extension'
