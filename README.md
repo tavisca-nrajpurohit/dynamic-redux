@@ -4,6 +4,8 @@
 ![node](https://img.shields.io/node/v/@rakoon-badshah/dynamic-redux)
 ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@rakoon-badshah/dynamic-redux)
 ![NPM](https://img.shields.io/npm/l/@rakoon-badshah/dynamic-redux)
+![npm](https://img.shields.io/npm/dt/@rakoon-badshah/dynamic-redux)
+
 
 This is a library to create [Redux](http://redux.js.org/) stores that can have additional reducers dynamically attached at runtime.
 
@@ -201,3 +203,6 @@ dotProp.delete(obj, 'foo.0.bar');
 * Each dynamic reducer needs a unique key
   * If the same key is used in a subsequent attachment, the original reducer will be replaced
 * Nested reducers cannot be attached to nodes of the state tree owned by a static reducer
+
+## Contributors
+* [Neelesh Rajpurohit](https://in.linkedin.com/in/neelesh-rajpurohit-b3515287)
